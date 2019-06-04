@@ -19,12 +19,14 @@ exports.verificaToken = function(req, res, next) {
             });
         }
 
-        // next();
+        req.usuario = decoded.usuario;
 
-        res.status(200).json({
-            ok: true,
-            decoded
-        });
+        next();
+
+        // res.status(200).json({
+        //     ok: true,
+        //     decoded
+        // });
 
     });
 };
